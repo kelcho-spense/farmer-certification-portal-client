@@ -1,15 +1,9 @@
-<<<<<<< HEAD
+
 # Farmer Certification Portal - Frontend
 
 A modern Next.js web application for the Farmer Certification Portal. This frontend provides a user-friendly interface for farmers to register, track their certification status, and for administrators to manage certification applications.
 
 ---
-=======
-# Farmer Certification Portal - Backend API
-
-A robust NestJS backend API for managing farmer certification applications. This API provides authentication, farmer registration, and certification status management.
->>>>>>> 4d26964b0be79e8be3f39ac68b1cbe18e5892af0
-
 ## Table of Contents
 
 - [Overview](#overview)
