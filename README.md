@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
 # Farmer Certification Portal - Backend API
 
 A robust NestJS backend API for managing farmer certification applications. This API provides authentication, farmer registration, and certification status management.
@@ -199,11 +161,11 @@ Register a new farmer account.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `email` | string | ✅ | Valid email address |
-| `password` | string | ✅ | Minimum 6 characters |
-| `name` | string | ✅ | Farmer's full name |
-| `farmSize` | number | ✅ | Farm size in acres (positive number) |
-| `cropType` | string | ✅ | Primary crop type |
+| `email` | string | Yes | Valid email address |
+| `password` | string | Yes | Minimum 6 characters |
+| `name` | string | Yes | Farmer's full name |
+| `farmSize` | number | Yes | Farm size in acres (positive number) |
+| `cropType` | string | Yes | Primary crop type |
 
 **Success Response (201 Created):**
 ```json
@@ -251,8 +213,8 @@ Authenticate an existing user.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `email` | string | ✅ | Registered email address |
-| `password` | string | ✅ | Account password |
+| `email` | string | Yes | Registered email address |
+| `password` | string | Yes | Account password |
 
 **Success Response (200 OK):**
 ```json
@@ -303,9 +265,9 @@ Register a new admin account.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `email` | string | ✅ | Valid email address |
-| `password` | string | ✅ | Minimum 6 characters |
-| `name` | string | ✅ | Admin's full name |
+| `email` | string | Yes | Valid email address |
+| `password` | string | Yes | Minimum 6 characters |
+| `name` | string | Yes | Admin's full name |
 
 **Success Response (201 Created):**
 ```json
@@ -332,7 +294,7 @@ Register a new admin account.
 
 Log out the current user (invalidates refresh token).
 
-**Authentication:** 🔒 Required (Access Token)
+**Authentication:** Required (Access Token)
 
 **Request Headers:**
 ```
@@ -352,7 +314,7 @@ Authorization: Bearer <access_token>
 
 Refresh access token using a valid refresh token.
 
-**Authentication:** 🔒 Required (Refresh Token)
+**Authentication:** Required (Refresh Token)
 
 **Request Headers:**
 ```
@@ -386,7 +348,7 @@ All farmer endpoints require authentication.
 
 Get a list of all farmers (Admin only).
 
-**Authentication:** 🔒 Required (Admin role)
+**Authentication:** Required (Admin role)
 
 **Request Headers:**
 ```
@@ -436,7 +398,7 @@ Authorization: Bearer <access_token>
 
 Get the current farmer's profile.
 
-**Authentication:** 🔒 Required (Any authenticated user)
+**Authentication:** Required (Any authenticated user)
 
 **Request Headers:**
 ```
@@ -464,7 +426,7 @@ Authorization: Bearer <access_token>
 
 Get a farmer's certification status.
 
-**Authentication:** 🔒 Required
+**Authentication:** Required
 
 **Path Parameters:**
 
@@ -494,7 +456,7 @@ Authorization: Bearer <access_token>
 
 Update a farmer's certification status (Admin only).
 
-**Authentication:** 🔒 Required (Admin role)
+**Authentication:** Required (Admin role)
 
 **Path Parameters:**
 
@@ -516,7 +478,7 @@ Authorization: Bearer <access_token>
 
 | Field | Type | Required | Allowed Values |
 |-------|------|----------|----------------|
-| `status` | enum | ✅ | `pending`, `certified`, `declined` |
+| `status` | enum | Yes | `pending`, `certified`, `declined` |
 
 **Success Response (200 OK):**
 ```json
@@ -634,4 +596,3 @@ curl http://localhost:8000/farmers/me \
 ## License
 
 This project is licensed under the MIT License.
->>>>>>> 527356c (Add comprehensive README documentation for the Farmer Certification Portal API)
